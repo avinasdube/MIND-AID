@@ -41,7 +41,9 @@ Each phase has its own `requirements.txt`, `src/`, `tests/`, and (optional) `dem
 
 ## Documentation
 
-See ongoing notes & progress: `docs/progress_explainer.md`
+See ongoing notes & progress: `docs/progress_explainer.md`.
+
+Detailed Phase 1 documentation: `docs/phase1_baseline.md`.
 
 ## Disclaimer
 
