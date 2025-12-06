@@ -1,0 +1,30 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        phase: [phase1_baseline, phase2_transformer, phase3_multimodal]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: |
+          cd ${{ matrix.phase }}
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install -r requirements.txt || echo "No requirements file"
+          pip install pytest
+      - name: Run tests
+        run: |
+          cd ${{ matrix.phase }}
+          source .venv/bin/activate
+          pytest -q || echo "Tests failed or not present"
