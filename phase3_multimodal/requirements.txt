@@ -1,0 +1,7 @@
+torch
+torchvision
+mediapipe
+pandas
+numpy
+scikit-learn
+streamlit
