@@ -13,7 +13,7 @@ import ui as ui
 st.set_page_config(page_title="MIND-AID Phase 1", page_icon="🧠", layout="wide")
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MODEL_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "models", "phase1"))
+MODEL_DIR = os.path.abspath(os.path.join(BASE_DIR, "output", "models"))
 
 try:
     tfidf, clf = load_models(MODEL_DIR)
