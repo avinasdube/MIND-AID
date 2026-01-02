@@ -1,0 +1,69 @@
+# ---- OS / Editor files ----
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# VS Code
+.vscode/
+
+# ---- Python artifacts ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.pickle
+*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ---- Build / distribution ----
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ---- Model artifacts & checkpoints ----
+# Phase 1 baseline outputs
+phase1_baseline/output/models/
+phase1_baseline/output/metrics/
+
+# Phase 2 transformer outputs
+phase2_transformer/output/models/
+phase2_transformer/output/metrics/
+
+# Phase 3 multimodal outputs (future models/metrics go here)
+phase3_multimodal/output/
+
+# Generic model files that may appear anywhere
+*.pt
+*.bin
+*.onnx
+*.h5
+
+# ---- Data files (large / private) ----
+# Raw and processed data are usually large and/or sensitive.
+# Keep the folder structure, but ignore actual data files.
+
+data/raw/**/*
+!data/raw/.gitkeep
+
+data/processed/**/*
+!data/processed/.gitkeep
+
+# ---- Local environment / tooling ----
+*.env
+.env.*
+.terraform/
+.azure/
+
+# Streamlit cache
+.streamlit/
