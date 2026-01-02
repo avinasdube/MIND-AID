@@ -10,7 +10,6 @@ import os
 import sys
 from typing import List
 
-import numpy as np
 import pandas as pd
 import streamlit as st
 
@@ -84,17 +83,8 @@ def _color_for_value(v: float) -> str:
 def _token_html(tokens_with_values):
 	spans = []
 	for token, val in tokens_with_values:
-		# Ensure SHAP value is a scalar for formatting/colouring
-		if isinstance(val, (np.ndarray, list)):
-			try:
-				val_scalar = float(np.asarray(val).mean())
-			except Exception:
-				val_scalar = 0.0
-		else:
-			val_scalar = float(val)
-
-		bg = _color_for_value(val_scalar)
-		title = f"SHAP: {val_scalar:.4f}"
+		bg = _color_for_value(val)
+		title = f"SHAP: {val:.4f}"
 		spans.append(
 			f"<span class='token' style='background:{bg}' title='{title}'>{token}</span>"
 		)
